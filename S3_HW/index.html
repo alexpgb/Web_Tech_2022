@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Веб-технологии. Домашнее задание к семинару 3</title>
+</head>
+<body>
+    <div class="top">
+        <h1 class="header-top">Домашнее задание к семинару 3.</h1>
+        <p class="header_text">Задание:</p>
+        <p class="header_text">
+            Создать страницу, которая спрашивает имя у пользователя и выводит его с помощью функции.
+        </p>
+    </div>
+    <div class="content">
+        <h class="header-content">
+            Решение:
+        </h>
+        <br>
+        <span>Укажите имя пользователя :</span> 
+        <input type="text" class="input_text" placeholder="Имя пользователя">
+        <input type="button" class="btn-print" value="Отобразить">
+        <input type="button" class="btn-clear" value="Очистить">
+        <hr>
+        <p class="output_text">
+            <span class="label">Имя пользователя:&nbsp;</span>
+            <span class="output-text"></span>
+        </p>
+    </div>
+    <div class="footer">
+
+    </div>
+    <script>
+        // document.getElementsByClassName('input_text')[0].value
+        // document.querySelectorAll('body > div[class="content"] > p[class="output_text"] > span[class="output-text"]')[0].innerHTML
+        // document.querySelectorAll('body > div[class="content"] > input[class="btn-print"]')[0]
+        // document.querySelectorAll('body > div[class="content"] > input[class="btn-clear"]')[0]
+        
+        document.querySelectorAll('body > div[class="content"] > input[class="btn-print"]')[0].onclick = printName
+        document.querySelectorAll('body > div[class="content"] > input[class="btn-clear"]')[0].onclick = clearName
+
+        function printName () {
+            document.querySelectorAll('body > div[class="content"] > p[class="output_text"] > span[class="output-text"]')[0].innerHTML = document.getElementsByClassName('input_text')[0].value
+        }
+
+        function clearName () {
+            document.querySelectorAll('body > div[class="content"] > p[class="output_text"] > span[class="output-text"]')[0].innerHTML = ''
+        }
+
+    </script>
+</body>
+</html>
